@@ -67,17 +67,14 @@
             </button>
             <div class="left-side-logo d-block d-lg-none">
                 <div class="text-center">
-                    <a class="logo">Skin Care</a>
+                    <a class="logo">ZKS</a>
                 </div>
             </div>
             <div class="sidebar-inner slimscrollleft">
                 <div id="sidebar-menu">
                     <ul>
                         <li class="menu-title">Main</li>
-                        <?php
-                        $userRole = $fetch_query['user_role'];
-                        if ($userRole === '1') {
-                        ?>
+                        
                         <li>
                             <a href="dashboard.php" class="waves-effect">
                                 <i class="dripicons-meter"></i>
@@ -87,159 +84,53 @@
 
 
                         <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-location"></i> <span> Areas</span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-location"></i> <span> Company</span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="list-unstyled">
-                                <li><a href="areas_list.php">Areas List</a></li>
+                                <li><a href="company_list.php">Company List</a></li>
                             </ul>
                         </li>
-
-
-
 
                         <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-pulse"></i> <span> Case</span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-pulse"></i> <span> Models</span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="list-unstyled">
-                                <li><a href="case_list.php">Case List</a></li>
+                                <li><a href="model_list.php">Model List</a></li>
                             </ul>
                         </li>
-
-
-
-
                                            
                         <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-wheelchair-accessibility"></i> <span> Patients </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-wheelchair-accessibility"></i> <span> Stock </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="list-unstyled">
-                                <li><a href="patient_new.php">Patient Registration</a></li>
-                                <li><a href="patients_list.php">Patients List</a></li>
-                                <li><a href="today_list.php">Today's Patient</a></li>
-                                <li><a href="printPatientClosing.php">Today's Closing</a></li>
-                                <li><a href="patients_counter.php">Examined Patients</a></li>
+                                <li><a href="stock_add.php">Add Stock</a></li>
+                                <li><a href="stock_list.php">Stock List</a></li>
                             </ul>
                         </li>
 
 
                         <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-h-square"></i> <span> Hair Transplant </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-h-square"></i> <span> Sell </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="list-unstyled">
-                                <li><a href="new_ht_pat.php">Add H.T Patient</a></li>
-                                <li><a href="ht_pat_list.php">H.T Patients List</a></li>
-                                <li><a href="all_ht_pat_list.php">All H.T Patients List</a></li>
+                                <li><a href="sell_mobile.php">Sell Mobile</a></li>
+                                <li><a href="sell_list.php">Sell List</a></li>
                             </ul>
                         </li>
 
 
 
                         <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-hospital-o"></i> <span> Laser </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-hospital-o"></i> <span> Reports </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="list-unstyled">
-                                <li><a href="add_laser_pat.php">Add Laser Patient</a></li>
-                                <li><a href="laser_pat_list.php">Laser Patients List</a></li>
-                                <li><a href="laser_all_pat_list.php">Laser All Patients List</a></li>
+                                <li><a href="report_stock.php">Stock Report</a></li>
+                                <li><a href="report_PL.php">Profit &amp; Loss Report</a></li>
                             </ul>
                         </li>
-
-                        <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-broadcast"></i> <span> Expenses </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
-                            <ul class="list-unstyled">
-                                <li><a href="expense.php">Add Expense</a></li>
-                                <li><a href="expense_list.php">Expense List</a></li>
-                                <li><a href="printExpenseList.php">Today's Expense</a></li>
-                            </ul>
-                        </li>
-
 
                         <li class="has_sub">
                             <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-user-group"></i> <span> Users</span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="list-unstyled">
-                                <li><a href="user_new.php">Add New User</a></li>
-                                <li><a href="users_list.php">Users List</a></li>
+                                <li><a href="profile.php">Users List</a></li>
                             </ul>
                         </li>
 
-                        <?php
-                            }else {
-                        ?>
-
-                        <li>
-                            <a href="home.php" class="waves-effect">
-                                <i class="fa fa-home"></i>
-                                <span> Dashboard </span>
-                            </a>
-                        </li>
-
-                        <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-experiment"></i> <span> Lab Tests</span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
-                            <ul class="list-unstyled">
-                                <li><a href="add_test.php">Add Tests</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-plus-square"></i> <span> Diagnosis / DD</span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
-                            <ul class="list-unstyled">
-                                <li><a href="add_diagnosis.php">Add Diagnosis</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-wheelchair-accessibility"></i> <span> Patients</span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
-                            <ul class="list-unstyled">
-                                <li><a href="unexamined_patients.php">New Patients</a></li>
-                                <li><a href="examined_patients.php">Examined Patients</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-hospital-o"></i> <span> Medicines</span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
-                            <ul class="list-unstyled">
-                                <li><a href="medicine_doctor.php">Medicine New</a></li>
-                                <li><a href="medicine_doctor_list.php">Medicine List</a></li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="printPatientClosing.php" class="waves-effect">
-                                <i class="fa fa-money"></i>
-                                <span> Today's Closing </span>
-                            </a>
-                        </li>
-
-                        <?php
-                        }
-
-
-                        if ($userRole === '3') {
-                        ?>
-
-
-                        <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-briefcase"></i> <span> Pharmacy</span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
-                            <ul class="list-unstyled">
-                                <li><a href="pharmacy_medicine_category.php">Medicines Category</a></li>
-                                <li><a href="pharmacy_medicine_new.php">Add New Medicines</a></li>
-                                <li><a href="pharmacy_medicine_list.php">Medicines List</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-dollar"></i> <span> Purchase Medicines</span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
-                            <ul class="list-unstyled">
-                                <li><a href="purchase_medicines.php">Purchase Medicines</a></li>
-                                <li><a href="purchase_list.php">Purchased List</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-users"></i> <span> Customers</span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
-                            <ul class="list-unstyled">
-                                <li><a href="pharmacy_order_new.php">Sell Medicines</a></li>
-                                <li><a href="sell_list.php">Selling List</a></li>
-                            </ul>
-                        </li>
-                        <?php
-                        }
-                        ?>
                     </ul>
                 </div>
                 <div class="clearfix"></div>

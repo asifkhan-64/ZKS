@@ -69,7 +69,7 @@
                                 <div class="card" >
                                     <div class="card-body">
                                         <h3 class="text-center mt-0 m-b-15">
-                                            <a  class="logo logo-admin"><img src="pages/Logo.png" width="18%" height="20%"> <h3>L Skin Laser & Hair Transplant</h3></a>
+                                            <a  class="logo logo-admin"><h3 style="font-family: Georgia; font-weight: 100">Zarak Khan Mobile</h3></a>
                                         </h3>
                 
                                         <h4 class="text-muted text-center font-18"><b>Sign In</b></h4><hr>
@@ -78,7 +78,7 @@
                                             <form class="form-horizontal m-t-20" method="POST">
                                                 <div class="form-group row">
                                                     <div class="col-12">
-                                                        <input class="form-control" name="user_email" type="text" required="" placeholder="Username">
+                                                        <input class="form-control" name="user_email" type="text" required="" placeholder="Email">
                                                     </div>
                                                 </div>
                 
