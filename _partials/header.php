@@ -22,7 +22,7 @@
     <meta content="ThemeDesign" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- <link rel="shortcut icon" href="../assets/LogoFinal.png"> -->
-    <link rel="shortcut icon" href="Logo.png">
+    <link rel="shortcut icon" href="../assets/mobiles-removebg-preview.png">
     <!--Morris Chart CSS -->
     <link rel="stylesheet" href="../assets/plugins/morris/morris.css">
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -44,11 +44,8 @@
     <link rel="stylesheet" type="text/css" href="../assets/bootstrap-slider.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/bootstrap-datetimepicker.css">
     <link rel="stylesheet" type="text/css" href="../assets/bootstrap-datepicker.min.css">
-    <!-- <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script> -->
-    
-    
 
-    <!-- <link href="../assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet"> -->
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 
 <body class="fixed-left">
@@ -84,21 +81,21 @@
 
 
                         <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-location"></i> <span> Company</span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-building"></i> <span> Company</span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="list-unstyled">
                                 <li><a href="company_list.php">Company List</a></li>
                             </ul>
                         </li>
 
                         <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-pulse"></i> <span> Models</span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-mobile"></i> <span> Models</span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="list-unstyled">
                                 <li><a href="model_list.php">Model List</a></li>
                             </ul>
                         </li>
                                            
                         <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-wheelchair-accessibility"></i> <span> Stock </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-chart-line"></i> <span> Stock </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="list-unstyled">
                                 <li><a href="stock_add.php">Add Stock</a></li>
                                 <li><a href="stock_list.php">Stock List</a></li>
@@ -107,7 +104,7 @@
 
 
                         <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-h-square"></i> <span> Sell </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-hand-holding-usd"></i> <span> Sell </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="list-unstyled">
                                 <li><a href="sell_mobile.php">Sell Mobile</a></li>
                                 <li><a href="sell_list.php">Sell List</a></li>
@@ -117,7 +114,7 @@
 
 
                         <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-hospital-o"></i> <span> Reports </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-file"></i> <span> Reports </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="list-unstyled">
                                 <li><a href="report_stock.php">Stock Report</a></li>
                                 <li><a href="report_PL.php">Profit &amp; Loss Report</a></li>
@@ -125,9 +122,16 @@
                         </li>
 
                         <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-user-group"></i> <span> Users</span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-list"></i> <span> Shop Details </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="list-unstyled">
-                                <li><a href="profile.php">Users List</a></li>
+                                <li><a href="shop_info.php">Shop Info</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-user-group"></i> <span> Admin</span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="profile.php">Profile</a></li>
                             </ul>
                         </li>
 
@@ -145,7 +149,7 @@
                 <div class="topbar">
                     <div class="topbar-left d-none d-lg-block">
                         <div class="text-center pt-2"  >
-                            <a  class="text-white "><h5>Skin Laser & Aesthetic Clinic</h5></a>
+                            <a  class="text-white "><h5>Zarak Khan Mobiles</h5></a>
                         </div>
                     </div>
                     <nav class="navbar-custom">

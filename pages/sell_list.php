@@ -6,13 +6,12 @@
     }
     include('../_partials/header.php');
 ?>
-<link href="../assets/plugins/sweet-alert2/sweetalert2.min.css" rel="stylesheet" type="text/css">
 
 <div class="page-content-wrapper ">
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
-                <h5 class="page-title">Customers List</h5>
+                <h5 class="page-title">Sell List</h5>
             </div>
         </div>
         <!-- end row -->
@@ -20,43 +19,48 @@
             <div class="col-12">
                 <div class="card m-b-30">
                     <div class="card-body">
-                        <h4 class="mt-0 header-title text-center">Customers List</h4>
+                        <h4 class="mt-0 header-title text-center">Sell List</h4>
                         <table id="datatable" class="table  dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                             <thead>
                                 <tr>
-                                    <th>Patient No.</th>
+                                    <th>#</th>
                                     <th>Name</th>
-                                    <th>Amount</th>
-                                    <th>Percentage</th>
-                                    <th>Paid Amount</th>
+                                    <th>Cell #</th>
+                                    <th>Sell Price</th>
+                                    <th>Mobile</th>
                                     <th>Date</th>
+                                    <th>Edit</th>
                                     <th>Print</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
-                                $selectQueryPatients = mysqli_query($connect, "SELECT * FROM `invoice_customer`");
+                                $selectQuery = mysqli_query($connect, "SELECT sell_product.*, stock_add.comp_id, stock_add.mod_id, stock_add.mobile_imeione, companies.company_name, company_model.model_name FROM `sell_product`
+                                INNER JOIN stock_add ON stock_add.st_id = sell_product.st_id
+                                INNER JOIN companies ON companies.id = stock_add.comp_id
+                                INNER JOIN company_model ON company_model.mod_id = stock_add.mod_id");
 
+                                $itr = 1;
 
-                                while ($rowPatients = mysqli_fetch_assoc($selectQueryPatients)) {
+                                while ($row = mysqli_fetch_assoc($selectQuery)) {
                                     echo '
                                         <tr>
-                                            <td>'."00".$rowPatients['refNo'].'</td>
-                                            <td>'.$rowPatients['customer_name'].'</td>
-                                            <td>'.$rowPatients['total_amount'].'</td>';
-                                            $dateAdmisison = $rowPatients['doi']; 
-                                            $doi = date('d/M/Y h:i:s A', strtotime($dateAdmisison));
-                                            echo '
-                                            <td>'.$rowPatients['discount_percentage'].'</td>
-                                            <td>'.$rowPatients['paid_amount'].'</td>
-                                            <td>'.$doi.'</td>
+                                            <td>'.$itr++.'</td>
+                                            <td>'.$row['customer_name'].'</td>
+                                            <td>0'.$row['customer_cell'].'</td>
+                                            <td>'.$row['customer_cnic'].'</td>
+                                            <td>'.$row['company_name'].' - '.$row['model_name'].'</td>
+                                            <td>'.$row['customer_date'].'</td>
+                                            
+                                            <td class="text-center">
+                                                <a href="sell_list_edit.php?id='.$row['sell_id'].'" type="button" class="btn text-white btn-success waves-effect waves-light btn-sm"><i class="fa fa-pencil"></i></a>
+                                            </td>
 
                                             <td class="text-center">
-                                            <a href="print.php?refNo='.$rowPatients['refNo'].'" type="button" class="btn text-white btn-primary waves-effect waves-light btn-sm"><i class="fa fa-print"></i></a>
+                                                <a href="print.php?refNo='.$row['sell_id'].'" type="button" class="btn text-white btn-primary waves-effect waves-light btn-sm"><i class="fa fa-print"></i></a>
                                             </td>
                                         </tr>';
-                                        }
-
+                                    }
                                 ?>
                                 
                                     

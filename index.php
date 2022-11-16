@@ -20,11 +20,7 @@
                 session_start();
                 $_SESSION["user"] = $user_email;
                 $_SESSION["id"] = $id;
-                if ($user_role == '1') {
-                    header("LOCATION:pages/dashboard.php");    
-                }elseif ($user_role == '2') {
-                    header("LOCATION:pages/home.php");
-                }
+                header("LOCATION:pages/dashboard.php");
               }else {
                 $valid_login = ' <div class="alert alert-danger" style="background:#D52520; color:white" role="alert">
                     Access Denied. You have been restricted.</div>';
@@ -44,7 +40,7 @@
         <meta content="ThemeDesign" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <link rel="shortcut icon" href="pages/Logo.png">
+        <link rel="shortcut icon" href="./assets/mobiles-removebg-preview.png">
 
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
