@@ -13,6 +13,15 @@
     $toDate = $_GET['to'];
 
     include('../_partials/header.php');
+
+
+    $retMobiles = mysqli_query($connect, "SELECT stock_add.*, companies.company_name, company_model.model_name, sell_product.* FROM `sell_product`
+                                INNER JOIN stock_add ON stock_add.st_id  = sell_product.st_id
+                                INNER JOIN companies ON companies.id = stock_add.comp_id
+                                INNER JOIN company_model ON company_model.mod_id = stock_add.mod_id
+                                WHERE sell_product.customer_date BETWEEN '$fromDate' AND '$toDate'");
+
+    $noOfRows = mysqli_num_rows($retMobiles);
 ?>
 
 <div class="page-content-wrapper ">
@@ -23,6 +32,11 @@
             </div>
         </div>
         <!-- end row -->
+
+        <?php
+        if ($noOfRows > 0) {
+        ?>
+        
         <div class="row">
             <div class="col-12">
                 <div class="card m-b-30">
@@ -45,11 +59,7 @@
                             </thead>
                             <tbody>
                                 <?php 
-                                $retMobiles = mysqli_query($connect, "SELECT stock_add.*, companies.company_name, company_model.model_name, sell_product.* FROM `sell_product`
-                                INNER JOIN stock_add ON stock_add.st_id  = sell_product.st_id
-                                INNER JOIN companies ON companies.id = stock_add.comp_id
-                                INNER JOIN company_model ON company_model.mod_id = stock_add.mod_id
-                                WHERE sell_product.customer_date BETWEEN '$fromDate' AND '$toDate'");
+                                
                                 $iteration = 1;
 
                                 while ($rowMobiles = mysqli_fetch_assoc($retMobiles)) {
@@ -91,6 +101,27 @@
                 </div>
             </div> <!-- end col -->
         </div> <!-- end row -->
+
+        <?php
+        }else {
+        ?>
+
+        <div class="row p-5 m-5">
+            <div class="col-12">
+                <div class="card m-b-30">
+                    <div class="card-body text-center">
+                        <h4 class="mt-0 header-title">Profilt &amp; Loss Report</h4>
+                        <hr>
+                        <h2 class="p-5">No data found!</h2>
+                    </div>
+                </div>
+            </div> <!-- end col -->
+        </div> <!-- end row -->
+
+        <?php
+            
+        }
+        ?>
     </div><!-- container fluid -->
 </div> <!-- Page content Wrapper -->
 </div> <!-- content -->
