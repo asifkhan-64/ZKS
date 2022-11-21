@@ -7,6 +7,9 @@
     }
     $query = mysqli_query($connect, "SELECT user_role FROM login_user WHERE email = '$sesssionEmail' ");
     $fetch_query = mysqli_fetch_assoc($query);
+    
+    $get = mysqli_query($connect, "SELECT shop_name FROM `shop_info`");
+    $fet = mysqli_fetch_assoc($get);
 
 ?>
 <!DOCTYPE html>
@@ -17,7 +20,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <title>Skin Care</title>
+    <title><?php echo $fet['shop_name']; ?></title>
     <meta content="Admin Dashboard" name="description" />
     <meta content="ThemeDesign" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -45,7 +48,7 @@
     <link rel="stylesheet" type="text/css" href="../assets/bootstrap-datetimepicker.css">
     <link rel="stylesheet" type="text/css" href="../assets/bootstrap-datepicker.min.css">
 
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src='../assets/kit.js' crossorigin='anonymous'></script>
 </head>
 
 <body class="fixed-left">

@@ -18,14 +18,6 @@
     $get_info = mysqli_query($connect, "SELECT * FROM shop_info WHERE id = '1'");
     $fetch_get_info = mysqli_fetch_assoc($get_info);
 
-    $countInvoiceNumber = mysqli_query($connect, "SELECT COUNT(*) AS invoiceNo FROM sell_product");
-    $fetch_countInvoiceNumber = mysqli_fetch_assoc($countInvoiceNumber);
-
-    if ($fetch_countInvoiceNumber['invoiceNo'] === '0') {
-        $invoiceNumber = "00".$fetch_countInvoiceNumber['invoiceNo'] + 1;
-    }elseif ($fetch_countInvoiceNumber['invoiceNo'] < '10') {
-        $invoiceNumber = $fetch_countInvoiceNumber['invoiceNo'];
-    }
 
 include '../_partials/header.php';
 ?>
@@ -62,13 +54,7 @@ include '../_partials/header.php';
                                         
                                         <h4 class="float-right" style="font-size: 10px; margin-top: -10px !important;">Invoice No: 
                                             <?php
-                                                if ($invoiceNumber < 10) {
-                                                    echo "00".$invoiceNumber;
-                                                }elseif ($invoiceNumber < 100) {
-                                                    echo "0".$invoiceNumber;
-                                                }elseif ($invoiceNumber > 99) {
-                                                    echo $invoiceNumber;
-                                                }
+                                                echo $fetch_selectCustomer['invoice_no'];
                                             ?>
                                         </h4><br>
                                     </h3>

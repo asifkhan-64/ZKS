@@ -105,6 +105,26 @@
                                     <td>Mobile IMEI. 02</td>
                                     <td><?php echo  $fetch_getMobileByImei['mobile_imeitwo'] ?></td>
                                 </tr>
+
+                                <tr>
+                                    <td>Owner Name</td>
+                                    <td><?php echo  $fetch_getMobileByImei['o_name'] ?></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Owner Contact</td>
+                                    <td><?php echo  $fetch_getMobileByImei['o_contact'] ?></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Owner Address</td>
+                                    <td><?php echo  $fetch_getMobileByImei['o_address'] ?></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Bill No</td>
+                                    <td><?php echo  $fetch_getMobileByImei['o_bill'] ?></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>

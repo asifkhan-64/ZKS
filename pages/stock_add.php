@@ -22,6 +22,12 @@
         $mobile_imei        = $_POST['mobile_imei'];
         $mobile_imeione     = $_POST['mobile_imeione'];
         $mobile_imeitwo     = $_POST['mobile_imeitwo'];
+        $box_status         = $_POST['box_status'];
+
+        $o_name             = $_POST['o_name'];
+        $o_address          = $_POST['o_address'];
+        $o_contact          = $_POST['o_contact'];
+        $o_bill             = $_POST['o_bill'];
 
         $queryAddStock = mysqli_query($connect, 
             "INSERT INTO `stock_add`(
@@ -37,7 +43,11 @@
                          `mobile_imei`,
                           `mobile_imeione`,
                            `mobile_imeitwo`,
-                            `box_status`
+                            `box_status`,
+                             `o_name`,
+                              `o_address`,
+                               `o_contact`,
+                                `o_bill`
                 ) VALUES (
                     '$comp_id',
                      '$mod_id',
@@ -51,7 +61,11 @@
                              '$mobile_imei',
                               '$mobile_imeione',
                                '$mobile_imeitwo',
-                                '$box_status'
+                                '$box_status',
+                                 '$o_name',
+                                  '$o_address',
+                                   '$o_contact',
+                                    '$o_bill'
             )
            ");
 
@@ -67,7 +81,7 @@
 ?>
 <link rel="stylesheet" type="text/css" href="../assets/bootstrap-datetimepicker.css">
 <!-- Top Bar End -->
-<div class="page-content-wrapper ">
+<div class="page-content-wrapper">
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
@@ -190,6 +204,33 @@
                                     </select>
                                 </div>
                             </div>
+
+                            <hr>
+
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Name</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" name="o_name" placeholder="Owner Name" required="">
+                                </div>
+
+                                <label class="col-sm-2 col-form-label">Address</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" name="o_address" placeholder="Owner Address" required="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Contact</label>
+                                <div class="col-sm-4">
+                                    <input type="number" class="form-control" name="o_contact" placeholder="Owner Contact" required="">
+                                </div>
+
+                                <label class="col-sm-2 col-form-label">Bill No</label>
+                                <div class="col-sm-4">
+                                    <input type="number" class="form-control" name="o_bill" placeholder="Bill Number" required="">
+                                </div>
+                            </div>
+
                             <hr>
 
                             <div class="form-group row">

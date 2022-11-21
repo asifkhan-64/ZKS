@@ -83,7 +83,7 @@
                                         <td>'.$rowMobiles['purchase_price'].'</td>
                                         <td>'.$rowMobiles['sell_price'].'</td>
                                         <td>'.$rowMobiles['mobile_color'].'</td>
-                                        <td>'.$rowMobiles['mobile_ram'].' - '.$rowMobiles['mobile_space'].'</td>';
+                                        <td>'.$rowMobiles['mobile_ram'].'GB - '.$rowMobiles['mobile_space'].'GB</td>';
 
                                         if ($rowMobiles['mobile_imei'] === '1') {
                                             echo '<td>PTA <i class="fa fa-check"></i></td>';

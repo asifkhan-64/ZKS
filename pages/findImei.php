@@ -28,6 +28,20 @@
 
         $stock_id  = $_POST['stock_id'];
 
+        $countInvoiceNumber = mysqli_query($connect, "SELECT COUNT(*) AS invoiceNo FROM sell_product");
+        $fetch_countInvoiceNumber = mysqli_fetch_assoc($countInvoiceNumber);
+        
+        $invoice = $fetch_countInvoiceNumber['invoiceNo'];
+
+        if ($invoice < '1') {
+            $invoice_no = $invoice + 1;
+        }else {
+            $invoice_no = $invoice + 1;
+        }
+
+
+
+
         $insertQuery = mysqli_query($connect,"INSERT INTO `sell_product`(
             `customer_name`,
              `customer_cell`,
@@ -35,7 +49,8 @@
                `customer_date`,
                 `customer_address`,
                  `st_id`,
-                  `sell_price`
+                  `sell_price`,
+                   `invoice_no`
             ) VALUES (
                 '$customer_name',
                  '$customer_cell',
@@ -43,7 +58,8 @@
                    '$customer_date',
                     '$customer_address',
                      '$stock_id',
-                      '$sell_price'
+                      '$sell_price',
+                       '$invoice_no'
             )");
 
 
@@ -59,6 +75,12 @@
 
     include('../_partials/header.php');
 ?>
+
+<style>
+    tr {
+        line-height: 0.5;
+    }
+</style>
 
 <div class="page-content-wrapper ">
     <div class="container-fluid">
@@ -77,7 +99,7 @@
                 <div class="card m-b-30">
                     <div class="card-body">
 
-                        <table class="table dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                        <table class="table dt-responsive nowrap">
                             <tbody>
                                 <tr>
                                     <td>Mobile</td>
@@ -117,6 +139,26 @@
                                 <tr>
                                     <td>Mobile IMEI. 02</td>
                                     <td><?php echo  $fetch_getMobileByImei['mobile_imeitwo'] ?></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Owner Name</td>
+                                    <td><?php echo  $fetch_getMobileByImei['o_name'] ?></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Owner Contact</td>
+                                    <td><?php echo  $fetch_getMobileByImei['o_contact'] ?></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Owner Address</td>
+                                    <td><?php echo  $fetch_getMobileByImei['o_address'] ?></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Bill No</td>
+                                    <td><?php echo  $fetch_getMobileByImei['o_bill'] ?></td>
                                 </tr>
                             </tbody>
                         </table>

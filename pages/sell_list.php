@@ -38,7 +38,8 @@
                                 $selectQuery = mysqli_query($connect, "SELECT sell_product.*, stock_add.comp_id, stock_add.mod_id, stock_add.mobile_imeione, companies.company_name, company_model.model_name FROM `sell_product`
                                 INNER JOIN stock_add ON stock_add.st_id = sell_product.st_id
                                 INNER JOIN companies ON companies.id = stock_add.comp_id
-                                INNER JOIN company_model ON company_model.mod_id = stock_add.mod_id");
+                                INNER JOIN company_model ON company_model.mod_id = stock_add.mod_id
+                                ORDER BY sell_product.customer_date DESC");
 
                                 $itr = 1;
 
@@ -53,7 +54,7 @@
                                             <td>'.$row['customer_date'].'</td>
                                             
                                             <td class="text-center">
-                                                <a href="sell_list_edit.php?id='.$row['sell_id'].'" type="button" class="btn text-white btn-success waves-effect waves-light btn-sm"><i class="fa fa-pencil"></i></a>
+                                                <a href="sell_list_edit.php?id='.$row['sell_id'].'" type="button" class="btn text-white btn-success waves-effect waves-light btn-sm"><i class="fa fa-edit"></i></a>
                                             </td>
 
                                             <td class="text-center">

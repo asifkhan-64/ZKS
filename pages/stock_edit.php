@@ -26,8 +26,14 @@
         $mobile_imei        = $_POST['mobile_imei'];
         $mobile_imeione     = $_POST['mobile_imeione'];
         $mobile_imeitwo     = $_POST['mobile_imeitwo'];
+        $box_status         = $_POST['box_status'];
         
         $id                 = $_POST['id'];
+
+        $o_name             = $_POST['o_name'];
+        $o_address          = $_POST['o_address'];
+        $o_contact          = $_POST['o_contact'];
+        $o_bill             = $_POST['o_bill'];
 
         $queryUpdateStock = mysqli_query($connect, 
             "UPDATE `stock_add` SET 
@@ -43,7 +49,12 @@
                          `mobile_imei` = '$mobile_imei',
                           `mobile_imeione` = '$mobile_imeione',
                            `mobile_imeitwo` = '$mobile_imeitwo',
-                            `box_status` = '$box_status'
+                            `box_status` = '$box_status',
+                             `o_name` = '$o_name',  
+                              `o_address` = '$o_address', 
+                               `o_contact` = '$o_contact', 
+                                `o_bill` = '$o_bill'
+                            
                              WHERE st_id = '$id'
            ");
 
@@ -233,6 +244,33 @@
                                     </select>
                                 </div>
                             </div>
+
+                            <hr>
+
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Name</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" name="o_name" value="<?php echo $fetch_getQuery['o_name'] ?>" placeholder="Owner Name" required="">
+                                </div>
+
+                                <label class="col-sm-2 col-form-label">Address</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" name="o_address" value="<?php echo $fetch_getQuery['o_address'] ?>" placeholder="Owner Address" required="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Contact</label>
+                                <div class="col-sm-4">
+                                    <input type="number" class="form-control" name="o_contact" value="0<?php echo $fetch_getQuery['o_contact'] ?>" placeholder="Owner Contact" required="">
+                                </div>
+
+                                <label class="col-sm-2 col-form-label">Bill No</label>
+                                <div class="col-sm-4">
+                                    <input type="number" class="form-control" name="o_bill" value="<?php echo $fetch_getQuery['o_bill'] ?>" placeholder="Bill Number" required="">
+                                </div>
+                            </div>
+
                             <hr>
 
                             <div class="form-group row">
